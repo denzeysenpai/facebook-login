@@ -5,7 +5,7 @@
     onMount(()=>{
         setTimeout(()=>{
             // cookie checking or whatever you want to put in
-            let someCondition = !true;
+            let someCondition = true;
             goto(someCondition ? "/login":"/dashboard")
         },0)
     })

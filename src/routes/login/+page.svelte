@@ -6,15 +6,15 @@
 <svelte:head>
   <title>Login using facebook</title>
   <script>
-        (function(d, s, id){
-                              var js, fjs = d.getElementsByTagName(s)[0];
-                              if (d.getElementById(id)) {return;}
-                              js = d.createElement(s); js.id = id;
-                              js.src = "https://connect.facebook.net/en_US/sdk.js";
-                              fjs.parentNode.insertBefore(js, fjs);
-                            }(document, 'script', 'facebook-jssdk')
+        (function(){
+            var js, fjs = document.getElementsByTagName('script')[0];
+            if (document.getElementById('facebook-jssdk')) {return;}
+            js = document.createElement('script'); js.id ='facebook-jssdk';
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }()
         );
-
+ 
         window.fbAsyncInit = function() {
             FB.init({
                       appId            : '614267834507665',
@@ -35,3 +35,5 @@
         };
   </script>
 </svelte:head>
+
+<div id="profile"></div>
