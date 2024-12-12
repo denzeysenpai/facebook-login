@@ -4,7 +4,7 @@ export function InitializeFB (d : Document, s : string, id : string) {
     try {
         var js,
         fjs = d.getElementsByTagName(s)[0];
-        // if (d.getElementById(id)) return;
+        if (d.getElementById(id)) return;
     
         js = d.createElement(s) as HTMLScriptElement;
         js.id = id;
@@ -14,4 +14,3 @@ export function InitializeFB (d : Document, s : string, id : string) {
         console.error(err)
     }
 }
-
